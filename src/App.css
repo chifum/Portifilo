@@ -1,38 +1,692 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-white: #fff;
+  --primary-red: #ec5b53;
+  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-hover-red: #c7c0be;
+  --primary-border: #eee;
+  --primary-text: rgb(000, 000, 000);
+  --primary-background: #eee;
+}
+body {
+  font-family: "Roboto Condensed" sans-serif;
+  background: #262626;
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+  background: #262626;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-thumb {
+  background-color: #262626;
+  outline: 1px solid #262626;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 3px solid var(--primary-red);
+}
+nav {
+  z-index: 2;
+}
+.topmenu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.logo {
+  width: 16.25rem;
+}
+nav a.nav-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+}
+nav ul li {
+  text-transform: uppercase;
+}
+.navbar-nav > li > a {
+  color: var(--primary-white) !important;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  border-top: 0.1875rem solid var(--primary-dark);
+}
+.navbar-brand {
+  max-width: 17.25rem;
+  padding: 0 !important;
+  height: 6 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-nav > li > a.active:focus {
+  border-top: 0.1875rem solid var(--primary-red);
+}
+.navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid var(--primary-red);
+}
+.navbar-toggler:focus {
+  outline: none !important;
+}
+.header-wraper {
+  position: relative;
+  background: url(computer-keyboards-wallpaper-preview.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+.main-info {
   display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Condensed" sans-serif;
+  z-index: 1;
+}
+.main-info h1 {
+  text-transform: uppercase;
+  color: var(--primary-red);
+}
+.typed-text {
+  font-size: 2rem;
+  color: var(--primary-white);
+}
+.btn-main-offer {
+  border: 1px solid var(--primary-red);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-white);
+  margin: 2rem;
+}
+.btn-main-offer:hover {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  text-decoration: none;
+  transition: 2s ease-in-out;
+}
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+.container-fluid-wrapper {
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto;
+}
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1%;
+}
+.box {
+  flex: 1 1 0;
+  min-width: 250px;
+  margin: 0.5rem;
+}
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.about-img {
+  border-radius: 50%;
+  width: 18.75rem;
+}
+.about-img {
+  cursor: pointer;
+  border: 4px solid var(--primary-border);
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+.about-img:hover {
+  -webkit-transform: translate(3em, 0);
+  -moz-transform: translate(3em, 0);
+  -o-transform: translate(3em, 0);
+  -ms-transform: translate(3em, 0);
+  transform: translate(3em, 0);
+}
+.about-heading {
+  font-family: "Roboto Condensed" sans-serif;
+  color: var(--primary-red);
+  text-transform: uppercase;
+  margin-top: -3%;
+  text-align: right;
+}
+.about-text {
+  font-family: "Roboto Condensed" sans-serif;
+  text-align: justify;
+  color: var(--primary-white);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 2%;
+  word-spacing: normal;
+  line-height: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* ########################## Services Start ################################### */
+.service-wrapper {
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto;
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1%;
+  margin-top: 2%;
+}
+.service-h1 {
+  color: var(--primary-red);
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed" sans-serif;
+}
+.service-box {
+  flex: 1 1 0;
+  min-width: 250px;
+  margin: 0.5rem;
+  border-bottom: 5px solid var(--primary-red);
+}
+.design,
+.development,
+.smm,
+.ad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.design:hover,
+.development:hover,
+.design:focus,
+.development:focus,
+.smm:hover,
+.smm:focus,
+.ad:hover,
+.ad:focus {
+  background-position: 0 100%;
+  color: #fff;
+
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto;
+}
+.service-icon-box {
+  margin-top: 0.9125rem;
+  width: 3.5625rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: 5px solid #262626;
+  background-color: var(--primary-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service-icon {
+  color: var(--primary-white);
+}
+.service-heading {
+  position: absolute;
+  top: 4.3rem;
+  color: var(--primary-white);
+  box-sizing: border-box;
+}
+.service-text {
+  color: var(--primary-white);
+  font-size: 1rem;
+  padding: 1rem;
+  line-height: 18px;
+  margin-top: 1rem;
+}
+/* ########################## Services End ################################### */
+
+/* ############################# Experience Start ######################################### */
+.experience-container {
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto;
+}
+.experience-h1 {
+  color: var(--primary-red);
+  text-align: right;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed" sans-serif;
+}
+/* ############################# Experience End ######################################### */
+
+/* ############################# Portifilo Start ######################################### */
+.portifilo-container,
+.contact-container,
+.education-container {
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto;
+}
+.portifilo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1%;
+  margin-top: 2%;
+}
+.portifilo-h1 {
+  color: var(--primary-red);
+  text-align: right;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed" sans-serif;
+}
+.firstpage,
+.secondpage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.portifilo-box {
+  flex: 1 1 0;
+  min-width: 250px;
+  margin: 0.5rem;
+}
+.portifilo-img {
+  background: url(Screenshot174.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  border: 4px solid var(--primary-red);
+}
+.portifilo-img2 {
+  background: url(Screenshot173.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  border: 4px solid var(--primary-red);
+}
+/* ############################# Portifilo End ######################################### */
+
+/* ############################# Contact Start ######################################### */
+.contact-h1 {
+  color: var(--primary-red);
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed" sans-serif;
+}
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1%;
+  margin-top: 2%;
+}
+.contact-box {
+  flex: 1 1 0;
+  min-width: 250px;
+  margin: 0.5rem;
+}
+.btnColor {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  text-transform: uppercase;
+  text-align: right;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  padding: 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+}
+.btnColor {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.btnColor:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btnColor:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+.btnColor:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+/* ############################# Contact End ######################################### */
+
+/* ############################# Education Start ######################################### */
+.education-h1 {
+  color: var(--primary-red);
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed" sans-serif;
+}
+.education {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1%;
+  margin-top: 2%;
+}
+.education-box {
+  flex: 1 1 0;
+  min-width: 250px;
+  margin: 0.5rem;
+}
+.bachelor,
+.card-footer {
+  background: radial-gradient(rgba(0, 0, 0, 0.66), #262626);
+  /* border: 1px solid var(--primary-red); */
+}
+.card-container {
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 22px 14px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+  cursor: pointer;
+}
+.card-container:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+  border: 1px solid #cccccc;
+  background-color: white;
+}
+.card-container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: var(--primary-red);
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(2);
+  transform-origin: 50% 50%;
+  transition: transform 0.15s ease-out;
+}
+.card-container:hover:before {
+  transform: scale(2.15);
+}
+
+/* ############################# Education End ######################################### */
+
+/* ############################# Footer Start ######################################### */
+.footer-container {
+  overflow-x: hidden;
+  --featured-img: linear-gradient(180deg, transparent, transparent);
+  --bg-blend-mode: overlay;
+  background-color: #262626;
+  background-position: top 58px center;
+  background-repeat: no-repeat;
+  /* background-image: radial-gradient(
+      50% 50% at top center,
+      rgba(0, 0, 0, 0.66),
+      #262626
+    ),
+    var(--featured-img);
+  background-size: 120% 1000px, 100% auto; */
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.menu-footer {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 5px solid black; */
+  width: 100%;
+  margin: 0 auto;
+}
+.ul-box {
+  flex: 1 1 0;
+  min-width: 50px;
+  margin: 0.5rem;
+}
+.footer-left,
+.footer-right {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-left li .a-footer {
+  margin-top: 0%;
+}
+.a-footer {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.a-footer:hover {
+  border-bottom: 0.1875rem solid var(--primary-red);
+}
+.social-footer {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+  position: relative;
+}
+.social-media {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.social-box {
+  flex: 1 1 0;
+  min-width: 50px;
+  margin: 0.5rem;
+}
+.social-children {
+  padding: 0% 9% 9% 0%;
+}
+.alright {
+  position: absolute;
+  top: 37%;
+  left: 0%;
+}
+
+/* ############################# Footer End ######################################### */
+@media only screen and (max-width: 1024px) {
+  .service-box {
+    max-width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+  .ul-box {
+    margin-top: 10%;
+  }
+  .social-box {
+    margin-top: -5%;
+  }
+  .footer-alright {
+    top: 70%;
+  }
+  .footer-left,
+  .footer-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-left li .a-footer {
+    margin-top: 0%;
+  }
+  .a-footer {
+    font-size: 0.9rem;
+  }
+  .social-children {
+    margin-top: 8%;
+    padding: 0% 5% 5% 0%;
+  }
+  .alright {
+    position: absolute;
+    top: 37%;
+    left: 0%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* .particles-canvas {
+    display: none;
+  } */
+  .main-info h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .typed-text {
+    font-size: 1.3rem;
+  }
+  .main-info {
+    display: flex;
+  }
+  .about-img {
+    width: 12.5rem;
+  }
+  .about-heading {
+    text-align: center;
+  }
+  .about-text {
+    font-size: 1rem;
+    text-align: justify;
+    font-weight: 500;
+  }
+  /* ############################# Service Start ######################################### */
+  .service-h1,
+  .education-h1,
+  .contact-h1 {
+    text-align: center;
+  }
+  .design-icon-box {
+    margin-top: 0.5125rem;
+  }
+  .services {
+    margin-top: 4%;
+  }
+  .service-heading {
+    position: absolute;
+    top: 4rem;
+  }
+  .service-text {
+    font-size: 1rem;
+    margin-top: 4%;
+    line-height: 15px;
+    padding: 10px 8px;
+  }
+  /* ############################# Service End ######################################### */
+
+  /* ############################# Experience Start ######################################### */
+  .experience-h1 {
+    text-align: center;
+  }
+  /* ############################# Experience End ######################################### */
+
+  /* ############################# Portifilo Start ######################################### */
+  .portifilo-h1 {
+    text-align: center;
+  }
+  /* ############################# Portifilo End ######################################### */
+}
+@media (max-width: 540px) {
+  .footer-box {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    width: 10.25rem;
+  }
+  .box {
+    min-width: 180px;
   }
 }
